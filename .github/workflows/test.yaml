@@ -18,6 +18,6 @@ jobs:
       - name: set var in release
         if: ${{ github.ref != 'refs/heads/main' }}
         run: echo "TAG=${VERSION}" >> $GITHUB_ENV
-      - nane: echo
+      - name: echo
         run: echo {{ env.TAG }}
 
