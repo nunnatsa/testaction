@@ -19,5 +19,7 @@ jobs:
         if: ${{ github.ref != 'refs/heads/main' }}
         run: echo "TAG=${VERSION}" >> $GITHUB_ENV
       - name: echo
-        run: echo {{ env.TAG }}
+        env:
+          TAG: {{ env.TAG }}
+        run: echo ${TAG}
 
