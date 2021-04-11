@@ -1,0 +1,17 @@
+name: Build and Push Images
+
+on:
+  push:
+    branches:
+      - main
+      - release-*
+jobs:
+  build_push:
+    name: Build and Push Images
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get latest version
+        run: |
+          echo "GITHUB_REF: ${GITHUB_REF}"
+          echo "GITHUB_HEAD_REF: ${GITHUB_HEAD_REF}"
+          echo "GITHUB_BASE_REF: ${GITHUB_BASE_REF}"
