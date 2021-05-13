@@ -6,21 +6,14 @@ on:
       - main
       - release-*
   workflow_dispatch:
+    inputs:
+      component:
+        description: 'Component to bump'
+        required: true
 jobs:
   build_push:
-    name: Build and Push Images
+    name: Check user imnput
     runs-on: ubuntu-latest
     steps:
-      - name: set version
-        run: echo "VERSION=v1.2.3" >> $GITHUB_ENV
-      - name: set var in main
-        if: ${{ github.ref == 'refs/heads/main' }}
-        run: echo "TAG=${VERSION}-unstable" >> $GITHUB_ENV
-      - name: set var in release
-        if: ${{ github.ref != 'refs/heads/main' }}
-        run: echo "TAG=${VERSION}" >> $GITHUB_ENV
-      - name: echo
-        env:
-          TAG: ${{ env.TAG }}
-        run: echo ${TAG}
-
+      - name: echo input
+        run: echo "Component tobump:" ${{ github.event.inputs.components }}"
