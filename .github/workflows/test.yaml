@@ -12,4 +12,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: echo input
-        run: echo "Component tobump: ${{ github.event.inputs.components }}"
+        run: |
+          echo "Component tobump: ${{ github.event.inputs.component }}"
