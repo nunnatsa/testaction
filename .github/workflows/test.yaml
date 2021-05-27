@@ -1,6 +1,11 @@
 name: Build and Push Images
 
 on:
+  schedule:
+  - cron:
+    '*/2 * * * *'
+    branches:
+    - main
   workflow_dispatch:
     branches:
     - main
