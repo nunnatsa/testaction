@@ -2,7 +2,7 @@ name: Build and Push Images
 
 on:
   schedule:
-  - cron: '43/3 * * * *'
+  - cron: '50 5 * * *'
   workflow_dispatch:
     branches:
     - main
