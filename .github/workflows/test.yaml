@@ -2,6 +2,9 @@ name: Build and Push Images
 
 on:
   workflow_dispatch:
+    branches:
+    - main
+    - test
     inputs:
       component:
         description: 'Component to bump'
