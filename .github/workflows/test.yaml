@@ -14,6 +14,8 @@ jobs:
     name: Check user imnput
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
       - name: echo input
         run: |
           echo "Component tobump: ${{ github.event.inputs.component }}"
+          cat release.txt
